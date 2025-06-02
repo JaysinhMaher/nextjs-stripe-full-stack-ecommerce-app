@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useCartStore } from "@/store/cart-store";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -21,7 +22,7 @@ type Order = {
     customer_email?: string;
 };
 
-export default function SuccessPage() {
+function SuccessPageContent() {
     const { clearCart } = useCartStore();
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");
@@ -165,5 +166,13 @@ export default function SuccessPage() {
                 }
             `}</style>
         </div>
+    );
+}
+
+export default function SuccessPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+            <SuccessPageContent />
+        </Suspense>
     );
 }
