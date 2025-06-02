@@ -2,9 +2,7 @@
 
 <div align="center">
   <br />
-  <a href="https://youtu.be/DLeAPn5-TIA" target="_blank">
     <img src="./banner.png" alt="Project Banner">
-  </a>
   <br />
   <div>
     <img src="https://img.shields.io/badge/-Next.js-000?style=for-the-badge&logo=next.js" alt="Next.js" />
