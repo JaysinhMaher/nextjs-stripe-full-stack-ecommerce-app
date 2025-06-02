@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkout-action";
 import { useEffect, useRef, useState, Fragment } from "react";
+import Link from "next/link"; // Add this import
 
 export default function CheckoutPage() {
     const { items, removeItem, addItem } = useCartStore();
@@ -103,11 +104,11 @@ export default function CheckoutPage() {
                 <p className="text-gray-500 mb-6 animate-fade-in-down delay-100">
                     Looks like you haven&apos;t added anything yet.
                 </p>
-                <a href="/" className="inline-block">
+                <Link href="/" className="inline-block">
                     <Button className="px-8 py-3 text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg transition-transform duration-200 active:scale-95 hover:scale-105 animate-pop-in">
                         Return To Home
                     </Button>
-                </a>
+                </Link>
                 <style jsx global>{`
                     @keyframes bounce-slow {
                         0%,
